@@ -15,7 +15,17 @@ class Character {
     defendMode = true;
   }
 
+  void resetDefenseMode() {
+    defendMode = false;
+  }
+
   void attackMonster(Monster monster) {
-    print('$name이(가) 공격합니다.');
+    int damage = (attack - monster.defense).clamp(0, double.infinity).toInt();
+    print('$name이(가) ${monster.name}에게 $damage의 피해를 입혔습니다.');
+  }
+
+  void showStatus() {
+    print(
+        '캐릭터 상태 - 이름: $name, 체력: $health, 공격력: $attack, 방어력: $defense, 처치한 몬스터 수: $kill');
   }
 }

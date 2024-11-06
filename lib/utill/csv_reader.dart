@@ -60,6 +60,15 @@ class CsvReader {
       final file = File('monster.txt');
       final contents = file.readAsLinesSync();
       
+      03.33333
+
+
+
+
+
+
+
+      
       for (String line in contents) {
         
       }

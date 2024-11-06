@@ -1,3 +1,3 @@
 class Item {
-  String name;
+  late String name;
 }

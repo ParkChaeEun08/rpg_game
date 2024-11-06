@@ -53,25 +53,28 @@ class CsvReader {
     return character;
   }
 
-// 위 함수와 마찬가지로 몬스터들의 스탯을 불러오는 함수도 작성해보세요.
   List<Monster> loadMonsterStats() {
-    List<Monster> monster;
+    List<Monster> monsters = [];
     try {
       final file = File('monster.txt');
       final contents = file.readAsLinesSync();
-      
-      03.33333
 
+      for (var line in contents) {
+        final stats = line.split(',');
 
-
-
-
-
-
-      
-      for (String line in contents) {
-        
+        if (stats.length != 3) {
+          String name = stats[0].trim();
+          int health = int.parse(stats[1].trim());
+          int maxAttack = int.parse(stats[2].trim());
+          monsters.add(Monster(name, health, maxAttack));
+        } else {
+          print('유효하지 않은 몬스터: $line');
+        }
       }
+    } catch (e) {
+      print('몬스터 데이터를 불러오는데 실패했습니다.');
+      exit(1);
     }
+    return monsters;
   }
 }

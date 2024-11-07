@@ -6,6 +6,7 @@ class Monster {
   late int health;
   late int maxAttack;
   late int defense = 0;
+  int turnCounter = 0;
 
 // 생성자
   Monster(this.name, this.health, this.maxAttack);
@@ -20,6 +21,11 @@ class Monster {
       character.health += randomAttack;
     } else {
       character.health -= damage;
+    }
+    if (turnCounter % 3 == 0) {
+      defense += 2;
+      print('$name의 방어력이 증가하였습니다. 현재 방어력: $defense');
+      turnCounter = 0;
     }
   }
 

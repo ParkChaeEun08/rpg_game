@@ -29,7 +29,7 @@ class CsvReader {
   Character loadCharacterStats() {
     Character character;
     try {
-      final file = File('characters.txt');
+      final file = File('rpg_game/lib/character.txt');
       final contents = file.readAsStringSync();
       final stats = contents.split(',');
       if (stats.length != 3) throw FormatException('Invalid character data');
@@ -56,7 +56,7 @@ class CsvReader {
   List<Monster> loadMonsterStats() {
     List<Monster> monsters = [];
     try {
-      final file = File('monster.txt');
+      final file = File('rpg_game/lib/monster.txt');
       final contents = file.readAsLinesSync();
 
       for (var line in contents) {

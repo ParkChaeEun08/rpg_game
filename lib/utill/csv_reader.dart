@@ -4,7 +4,9 @@ import 'dart:io';
 import 'package:rpg_game/vo/character.dart';
 import 'package:rpg_game/vo/monster.dart';
 
+// CSV 파일 읽기 및 데이터 로드
 class CsvReader {
+  //캐릭터 이름 입력 받기
   String getCharacterName() {
     String result = '';
     String? input;
@@ -26,6 +28,7 @@ class CsvReader {
     return result;
   }
 
+// 캐릭터 데이터 불러오기
   Character loadCharacterStats() {
     Character character;
     try {
@@ -53,6 +56,7 @@ class CsvReader {
     return character;
   }
 
+// 몬스터 데이터 불러오기
   List<Monster> loadMonsterStats() {
     List<Monster> monsters = [];
     try {

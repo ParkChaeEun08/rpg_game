@@ -13,6 +13,7 @@ void main() {
   game.startGame();
 }
 
+// RpgGame 클래스 정의
 class RpgGame {
   Character character;
   List<Monster> monsters;
@@ -20,6 +21,7 @@ class RpgGame {
 
   RpgGame(this.character, this.monsters);
 
+// 게임 시작
   void startGame() {
     print('게임이 시작되었습니다!');
     while (character.health > 0 && defeatedMonsters < monsters.length) {
@@ -63,11 +65,13 @@ class RpgGame {
     saveResult();
   }
 
+// 랜덤 몬스터 선택
   Monster getRandomMonster() {
     int index = Random().nextInt(monsters.length);
     return monsters[index];
   }
 
+// 게임 결과 저장
   void saveResult() {
     print('결과를 저장하시겠습니까? (y/n)');
     String? save = stdin.readLineSync();

@@ -1,0 +1,10 @@
+Pikachu,50,20
+Bulbasaur,50,20
+Squirtle,40,20
+Snorlax,50,15
+Charmander,30,15
+Pidgeotto,30,15
+Togepi,30,15
+Mew,70,25
+Raichu,50,20
+Wobbuffet,50,15

@@ -27,12 +27,14 @@ class RpgGame {
       while (monster.health > 0 && character.health > 0) {
         character.showStatus();
         monster.showStatus();
-        print('행동을 선택하세요: 1) 공격 2) 방어');
+        print('행동을 선택하세요: 1) 공격 2) 방어 3) 아이템 사용');
         String? action = stdin.readLineSync();
         if (action == '1') {
           character.attackMonster(monster);
         } else if (action == '2') {
           character.defend();
+        } else if (action == '3') {
+          character.useItem();
         }
         if (monster.health > 0) {
           monster.attackCharacter(character);

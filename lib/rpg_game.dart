@@ -76,7 +76,7 @@ class RpgGame {
     print('결과를 저장하시겠습니까? (y/n)');
     String? save = stdin.readLineSync();
     if (save?.toLowerCase() == 'y') {
-      File file = File('result.txt');
+      File file = File('rpg_game/lib/result.txt');
       file.writeAsStringSync(
           '캐릭터: ${character.name}, 체력: ${character.health}, 결과: ${character.health > 0 ? '승리' : '패배'}');
       print('결과가 result.txt에 저장되었습니다.');
